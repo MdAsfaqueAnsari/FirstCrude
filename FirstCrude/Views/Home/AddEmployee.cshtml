@@ -1,0 +1,57 @@
+﻿@model FirstCrude.Models.Class1
+
+<style>
+
+    .error{
+        color:#ff0000
+    }
+
+
+</style>
+
+
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+
+@using (Html.BeginForm("AddEmployee", "Home", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.sname, new { @class = "form-control", @placeholder = "Nmae"@*, data_val="true", data_val_required = "Enter Your Name"*@})
+        @Html.ValidationMessageFor(m=>m.sname ,"",new {@class= "error" })
+    
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.smail, new { @class = "form-control", @placeholder = "Please enter Email"@*, data_val = "true", data_val_required = "Enter Your Email"*@ })
+        @Html.ValidationMessageFor(m => m.smail, "", new { @class = "error" })
+
+    </div>
+
+    <div class="form-group">
+        <label>Mobile</label>
+        @Html.TextBoxFor(m => m.smob, new { @class = "form-control", @placeholder = "Enter the Mobile No"@*, data_val="true", data_val_required = "Enter Your Mobile No" *@})
+        @Html.ValidationMessageFor(m => m.smob, "", new { @class = "error" })
+
+    </div>
+
+    <div class="form-group">
+        <label>City</label>
+        @Html.TextBoxFor(m => m.city, new { @class = "form-control", @placeholder = "city"@*, data_val = "true", data_val_required = "Enter Your city" *@})
+        @Html.ValidationMessageFor(m => m.city, "", new { @class = "error" })
+
+    </div>
+
+    //<input type="date" />
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+}
+
+
+
